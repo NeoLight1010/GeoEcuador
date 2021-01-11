@@ -40,7 +40,7 @@ func _on_Provincia_input_event(_viewport, event, _shape_idx):
 			InfoLabel.text = province_name
 
 func _input(event):
-	# Handle press outside of Province.
+	# Handle press outside of Province (only if has_own_info_label).
 	if (event is InputEventMouseButton) and event.pressed and !mouse_over and has_own_info_label:
 		InfoLabel.hide()
 
