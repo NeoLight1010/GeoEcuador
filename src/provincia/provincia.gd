@@ -4,9 +4,15 @@ class_name Provincia
 export(String) var province_name
 export(PackedScene) var Polygon
 export(NodePath) var InfoLabel
+export(String) var DataJSON = "res://data/provincias/provincias.json"
 
 var mouse_over = false
 var has_own_info_label = false
+
+# Data variables
+var data
+var description
+var capital
 
 func _ready():
 	InfoLabel = get_node(InfoLabel)
@@ -38,6 +44,7 @@ func _on_Provincia_input_event(_viewport, event, _shape_idx):
 			InfoLabel.show()
 		else:
 			InfoLabel.text = province_name
+			print(data)
 
 func _input(event):
 	# Handle press outside of Province (only if has_own_info_label).
@@ -51,3 +58,16 @@ func _on_Provincia_mouse_entered():
 
 func _on_Provincia_mouse_exited():
 	mouse_over = false
+
+
+###################
+
+func read_data_json(path):
+	var file = File.new()
+	var json
+	
+	file.open(path, File.READ)
+	json = file.get_as_text()
+	file.close()
+	
+	return JSON.parse(json).result
