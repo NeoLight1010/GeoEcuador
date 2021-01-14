@@ -15,3 +15,5 @@ func _ready():
 			province.data = data_json[province.province_name]
 	
 
+func _on_Provincia_click(province):
+	print("Click on " + province.province_name)

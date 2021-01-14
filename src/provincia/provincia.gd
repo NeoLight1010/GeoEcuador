@@ -1,6 +1,8 @@
 extends Area2D
 class_name Provincia
 
+signal Provincia_click(provincia)
+
 export(String) var province_name
 export(PackedScene) var Polygon
 export(NodePath) var InfoLabel
@@ -15,6 +17,9 @@ var description
 var capital
 
 func _ready():
+	var root_node = get_tree().root.get_children()[0]
+	connect("Provincia_click", root_node, "_on_Provincia_click")
+	
 	InfoLabel = get_node(InfoLabel)
 	
 	# Set default Script Variables.
@@ -36,10 +41,12 @@ func _ready():
 		InfoLabel.hide()
 
 
-func _on_Provincia_input_event(_viewport, event, _shape_idx):
+func _on_Provincia_input_event(_viewport, event, _shape_idx):	
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT \
 			&& event.pressed:
 				
+		emit_signal("Provincia_click", self)
+		
 		if has_own_info_label:
 			InfoLabel.show()
 		else:
