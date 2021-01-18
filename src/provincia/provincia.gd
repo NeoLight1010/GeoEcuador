@@ -5,7 +5,6 @@ signal Provincia_click(provincia)
 
 export(String) var province_name
 export(PackedScene) var Polygon
-export(NodePath) var InfoLabel
 export(String) var DataJSON = "res://data/provincias/provincias.json"
 
 var mouse_over = false
@@ -19,26 +18,14 @@ var capital
 func _ready():
 	var root_node = get_tree().root.get_children()[0]
 	connect("Provincia_click", root_node, "_on_Provincia_click")
-	
-	InfoLabel = get_node(InfoLabel)
-	
+
 	# Set default Script Variables.
 	if Polygon:
 		remove_child($CollisionShape2D)
 		add_child(Polygon.instance())
-		
+
 	if not province_name:
 		province_name = name
-		
-	if not InfoLabel or not InfoLabel is Label:
-		has_own_info_label = true
-		InfoLabel = Label.new()
-		add_child(InfoLabel)
-		
-	InfoLabel.text = province_name
-	
-	if has_own_info_label:
-		InfoLabel.hide()
 
 
 func _on_Provincia_input_event(_viewport, event, _shape_idx):	
@@ -47,24 +34,6 @@ func _on_Provincia_input_event(_viewport, event, _shape_idx):
 				
 		emit_signal("Provincia_click", self)
 		
-		if has_own_info_label:
-			InfoLabel.show()
-		else:
-			InfoLabel.text = province_name
-			print(data)
-
-func _input(event):
-	# Handle press outside of Province (only if has_own_info_label).
-	if (event is InputEventMouseButton) and event.pressed and !mouse_over and has_own_info_label:
-		InfoLabel.hide()
-
-
-func _on_Provincia_mouse_entered():
-	mouse_over = true
-
-
-func _on_Provincia_mouse_exited():
-	mouse_over = false
 
 
 ###################
@@ -72,9 +41,9 @@ func _on_Provincia_mouse_exited():
 func read_data_json(path):
 	var file = File.new()
 	var json
-	
+
 	file.open(path, File.READ)
 	json = file.get_as_text()
 	file.close()
-	
+
 	return JSON.parse(json).result
