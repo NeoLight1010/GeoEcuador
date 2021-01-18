@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/joystix/joystix.tres" type="DynamicFont" id=1]
+
+[node name="InfoDisplay" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+margin_right = 482.0
+margin_bottom = 258.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+margin_right = 470.0
+margin_bottom = 953.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_right = 470.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+text = "[province.name]"
+align = 1
+
+[node name="Capital" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "Capital: [province.capital]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 470.0
+margin_bottom = 953.0
+custom_fonts/font = ExtResource( 1 )
+text = "Descripción: [province.description]
+( Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Ut non pharetra sapien. Praesent mollis, augue non feugiat malesuada, justo metus commodo sapien, id scelerisque risus dui eu est. Donec ultricies porta risus, id finibus elit hendrerit vitae. Phasellus ligula eros, imperdiet non viverra vel, pharetra eu nisi. In tincidunt sollicitudin pellentesque. Sed at vestibulum turpis, eget hendrerit nunc. Vivamus eros felis, tincidunt vitae porttitor id, mattis eget lectus. Aenean quis purus in sem vulputate pharetra ut eget leo. Ut blandit tincidunt accumsan. Donec congue tincidunt est, eget consectetur augue consequat id. Fusce efficitur aliquet risus vel sodales. Nunc finibus vestibulum suscipit.
+
+Nullam malesuada mi at sodales bibendum. Vivamus fermentum lacinia ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam tincidunt nunc eget convallis dignissim. Integer quis dui felis. Mauris tempor nibh nec tellus semper dignissim. Phasellus posuere magna eget sem fermentum scelerisque. Donec dapibus et risus a feugiat. Nunc et sem ante. Nunc vel sem lorem. Aliquam condimentum arcu at est faucibus faucibus. In rutrum sed ipsum et vestibulum. Nam cursus eleifend pharetra. )"
+autowrap = true
