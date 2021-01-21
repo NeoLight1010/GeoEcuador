@@ -25,7 +25,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 margin_right = 470.0
-margin_bottom = 953.0
+margin_bottom = 652.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -34,28 +34,37 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 margin_right = 470.0
-margin_bottom = 15.0
+margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
 text = "[province.name]"
 align = 1
 
-[node name="Capital" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 19.0
+[node name="Separator" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 16.0
 margin_right = 470.0
-margin_bottom = 34.0
+margin_bottom = 16.0
+
+[node name="Capital" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 470.0
+margin_bottom = 32.0
 custom_fonts/font = ExtResource( 1 )
 text = "Capital: [province.capital]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Description" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 38.0
+[node name="Separator2" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 36.0
 margin_right = 470.0
-margin_bottom = 953.0
+margin_bottom = 36.0
+
+[node name="Description" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 470.0
+margin_bottom = 652.0
 custom_fonts/font = ExtResource( 1 )
-text = "Descripción: [province.description]
-( Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+text = "Descripción: [province.description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Ut non pharetra sapien. Praesent mollis, augue non feugiat malesuada, justo metus commodo sapien, id scelerisque risus dui eu est. Donec ultricies porta risus, id finibus elit hendrerit vitae. Phasellus ligula eros, imperdiet non viverra vel, pharetra eu nisi. In tincidunt sollicitudin pellentesque. Sed at vestibulum turpis, eget hendrerit nunc. Vivamus eros felis, tincidunt vitae porttitor id, mattis eget lectus. Aenean quis purus in sem vulputate pharetra ut eget leo. Ut blandit tincidunt accumsan. Donec congue tincidunt est, eget consectetur augue consequat id. Fusce efficitur aliquet risus vel sodales. Nunc finibus vestibulum suscipit.
 
