@@ -38,7 +38,7 @@ def leer_descripcion(path):
     dirname = os.path.dirname(__file__)
 
     descripcion = ""
-    with open(os.path.join(dirname, "data", path), 'r', encoding='utf-8') as file:
+    with open(os.path.join(dirname, "data/provincias", path), 'r', encoding='utf-8') as file:
         descripcion = file.read()
 
     return descripcion
@@ -55,7 +55,7 @@ def cargar_provincias():
 
     json_provincias = None
 
-    with open(os.path.join(dirname, "data/provincias.json"), "r", encoding="utf-8") as json_file:
+    with open(os.path.join(dirname, "data/provincias/provincias.json"), "r", encoding="utf-8") as json_file:
         json_provincias = json.load(json_file)
 
     provincias = {}
