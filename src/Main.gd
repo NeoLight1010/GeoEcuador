@@ -4,6 +4,9 @@ extends Node2D
 export(String) var DataJSON = "res://data/provincias/provincias.json"
 
 
+var focused_province
+
+
 func _ready():
 	
 	# Load data
@@ -17,6 +20,10 @@ func _ready():
 
 
 func _on_Provincia_click(province):
-	print("Click on " + province.province_name)
-	print("Capital: " + province.capital)
-	print()
+	if focused_province == province:
+		# If province is clicked again.
+		print("Clicked again!")
+		get_tree().change_scene("res://info_display/info_display.tscn")
+	
+	focused_province = province
+	$InfoLabel.text = province.province_name
