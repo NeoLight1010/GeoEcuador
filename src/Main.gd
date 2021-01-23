@@ -1,29 +1,23 @@
 extends Node2D
 
-
-export(String) var DataJSON = "res://data/provincias/provincias.json"
-
-
-var focused_province
-
+var params = {}
+var scenes = {
+	'InfoDisplay': 'res://displays/info_display/info_display.tscn',
+	'MapDisplay': 'res://displays/map_display/map_display.tscn'
+}
 
 func _ready():
-	
-	# Load data
-	var data_json = Provincia.new().read_data_json(DataJSON)
-	
-	## Asign data to provinces
-	for region in $"ecuador_ map/Regiones".get_children():
-		for province in region.get_children():
-			province.data = data_json[province.province_name]
-			province.capital = province.data["Capital"]
+	change_scene('MapDisplay')
 
 
-func _on_Provincia_click(province):
-	if focused_province == province:
-		# If province is clicked again.
-		print("Clicked again!")
-		get_tree().change_scene("res://info_display/info_display.tscn")
+static func merge_dic(target, patch):
+	for key in patch:
+		target[key] = patch[key]
+
+
+func change_scene(scene, _params={}):
+	if not params.has(scene):
+		params[scene] = {}
 	
-	focused_province = province
-	$InfoLabel.text = province.province_name
+	merge_dic(_params, params[scene])
+	get_tree().change_scene(scenes[scene])

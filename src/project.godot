@@ -30,6 +30,10 @@ config/name="GeoEcuador"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Main="*res://Main.tscn"
+
 [display]
 
 window/size/width=512

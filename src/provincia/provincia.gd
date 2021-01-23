@@ -16,7 +16,7 @@ var description
 var capital
 
 func _ready():
-	var root_node = get_tree().root.get_children()[0]
+	var root_node = get_node("/root/Ecuador")
 	connect("Provincia_click", root_node, "_on_Provincia_click")
 
 	# Set default Script Variables.
@@ -28,7 +28,7 @@ func _ready():
 		province_name = name
 
 
-func _on_Provincia_input_event(_viewport, event, _shape_idx):	
+func _on_Provincia_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT \
 			&& event.pressed:
 				
