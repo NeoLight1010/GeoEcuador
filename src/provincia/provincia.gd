@@ -37,7 +37,6 @@ func _on_Provincia_input_event(_viewport, event, _shape_idx):
 
 
 ###################
-
 func read_data_json(path):
 	var file = File.new()
 	var json

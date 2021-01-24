@@ -24,8 +24,12 @@ func _on_Provincia_click(province):
 	
 	if focused_province == province:
 		# If province is clicked again.
-		print("Clicked again!")
-		Main.change_scene("InfoDisplay", {"province": province})
+		var data = {
+			"province_name": province.province_name,
+			"data": province.data
+		}
+		
+		Main.change_scene("InfoDisplay", data)
 		
 	focused_province = province
 	$InfoLabel.text = province.province_name
