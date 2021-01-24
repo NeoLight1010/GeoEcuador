@@ -10,4 +10,4 @@ onready var Description = $MarginContainer/ScrollContainer/VBoxContainer/Descrip
 func _ready():
 	Title.text = province_name
 	Capital.text = data['Capital']
-	Description.text = data['Descripción']
+	Description.text = Provincia.new().read_description_txt(data['Descripción'])

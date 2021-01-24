@@ -46,3 +46,16 @@ func read_data_json(path):
 	file.close()
 
 	return JSON.parse(json).result
+	
+func read_description_txt(path):
+	var data_directory = 'res://data/provincias/'
+	print(data_directory + path)
+	
+	var file = File.new()
+	var text
+	
+	file.open(data_directory + path, File.READ)
+	text = file.get_as_text()
+	file.close()
+	
+	return text
