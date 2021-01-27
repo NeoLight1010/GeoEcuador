@@ -59,3 +59,10 @@ func read_description_txt(path):
 	file.close()
 	
 	return text
+	
+func load_image(file_name):
+	var image_directory = 'res://assets/provincias/'
+	var full_path = image_directory + file_name
+	
+	print("returning image: " + full_path)
+	return load(full_path)

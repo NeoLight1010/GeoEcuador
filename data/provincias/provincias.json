@@ -2,7 +2,7 @@
     "Azuay": {
         "Región": "Sierra",
         "Descripción": "descripciones/azuay.txt",
-        "Imagen": "azuay.txt",
+        "Imagen": "azuay.png",
         "Ciudades": [
             "Cuenca"
         ],
@@ -12,7 +12,7 @@
     "Bolívar": {
         "Región": "Sierra",
         "Descripción": "descripciones/bolivar.txt",
-        "Imagen": "bolivar.txt",
+        "Imagen": "bolivar.png",
         "Ciudades": [
             "Guaranda"
         ],
@@ -22,7 +22,7 @@
     "Cañar": {
         "Región": "Sierra",
         "Descripción": "descripciones/canar.txt",
-        "Imagen": "canar.txt",
+        "Imagen": "canar.png",
         "Ciudades": [
             "Azogues"
         ],
@@ -32,7 +32,7 @@
     "Carchi": {
         "Región": "Sierra",
         "Descripción": "descripciones/carchi.txt",
-        "Imagen": "carchi.txt",
+        "Imagen": "carchi.png",
         "Ciudades": [
             "Tulcán"
         ],
@@ -42,7 +42,7 @@
     "Chimborazo": {
         "Región": "Sierra",
         "Descripción": "descripciones/chimborazo.txt",
-        "Imagen": "chimborazo.txt",
+        "Imagen": "chimborazo.png",
         "Ciudades": [
             "Riobamba"
         ],
@@ -52,7 +52,7 @@
     "Cotopaxi": {
         "Región": "Sierra",
         "Descripción": "descripciones/cotopaxi.txt",
-        "Imagen": "cotopaxi.txt",
+        "Imagen": "cotopaxi.png",
         "Ciudades": [
             "Latacunga"
         ],
@@ -62,7 +62,7 @@
     "El Oro": {
         "Región": "Costa",
         "Descripción": "descripciones/el_oro.txt",
-        "Imagen": "el_oro.txt",
+        "Imagen": "el_oro.png",
         "Ciudades": [
             "Machala"
         ],
@@ -72,7 +72,7 @@
     "Esmeraldas": {
         "Región": "Costa",
         "Descripción": "descripciones/esmeraldas.txt",
-        "Imagen": "esmeraldas.txt",
+        "Imagen": "esmeraldas.png",
         "Ciudades": [
             "Esmeraldas"
         ],
@@ -82,7 +82,7 @@
     "Galápagos": {
         "Región": "Insular",
         "Descripción": "descripciones/galapagos.txt",
-        "Imagen": "galapagos.txt",
+        "Imagen": "galapagos.png",
         "Ciudades": [
             "Puerto Baquerizo Moreno"
         ],
@@ -92,7 +92,7 @@
     "Guayas": {
         "Región": "Costa",
         "Descripción": "descripciones/guayas.txt",
-        "Imagen": "guayas.txt",
+        "Imagen": "guayas.png",
         "Ciudades": [
             "Guayaquil"
         ],
@@ -102,7 +102,7 @@
     "Imbabura": {
         "Región": "Sierra",
         "Descripción": "descripciones/imbabura.txt",
-        "Imagen": "imbabura.txt",
+        "Imagen": "imbabura.png",
         "Ciudades": [
             "Ibarra"
         ],
@@ -112,7 +112,7 @@
     "Loja": {
         "Región": "Sierra",
         "Descripción": "descripciones/loja.txt",
-        "Imagen": "loja.txt",
+        "Imagen": "loja.png",
         "Ciudades": [
             "Loja"
         ],
@@ -122,7 +122,7 @@
     "Los Ríos": {
         "Región": "Costa",
         "Descripción": "descripciones/los_rios.txt",
-        "Imagen": "los_rios.txt",
+        "Imagen": "los_rios.png",
         "Ciudades": [
             "Babahoyo"
         ],
@@ -132,7 +132,7 @@
     "Manabí": {
         "Región": "Costa",
         "Descripción": "descripciones/manabi.txt",
-        "Imagen": "manabi.txt",
+        "Imagen": "manabi.png",
         "Ciudades": [
             "Portoviejo"
         ],
@@ -142,7 +142,7 @@
     "Morona Santiago": {
         "Región": "Amazonía",
         "Descripción": "descripciones/morona_santiago.txt",
-        "Imagen": "morona_santiago.txt",
+        "Imagen": "morona_santiago.png",
         "Ciudades": [
             "Macas"
         ],

@@ -30,7 +30,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
 margin_right = 470.0
-margin_bottom = 652.0
+margin_bottom = 660.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -49,10 +49,20 @@ margin_top = 16.0
 margin_right = 470.0
 margin_bottom = 16.0
 
-[node name="Capital" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Image" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 margin_top = 20.0
+margin_bottom = 20.0
+stretch_mode = 6
+
+[node name="Separator3" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 24.0
 margin_right = 470.0
-margin_bottom = 32.0
+margin_bottom = 24.0
+
+[node name="Capital" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 470.0
+margin_bottom = 40.0
 custom_fonts/font = ExtResource( 1 )
 text = "Capital: [province.capital]"
 __meta__ = {
@@ -60,14 +70,14 @@ __meta__ = {
 }
 
 [node name="Separator2" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 36.0
+margin_top = 44.0
 margin_right = 470.0
-margin_bottom = 36.0
+margin_bottom = 44.0
 
 [node name="Description" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-margin_top = 40.0
+margin_top = 48.0
 margin_right = 470.0
-margin_bottom = 652.0
+margin_bottom = 660.0
 custom_fonts/font = ExtResource( 1 )
 text = "Descripción: [province.description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
