@@ -4,6 +4,7 @@
 
 # Minijuego de la aplicación GeoEcuador: comprueba tu conocimiento.
 import random
+from console import console
 
 class SetPreguntas:
     """Clase que representa un conjunto de preguntas que son consideradas del mismo tipo/categoría."""
@@ -61,6 +62,8 @@ class SetPreguntas:
 
 
 def iniciar_minijuego():
+    console.clear()
+
     nucleos_capitales = {
         "Azuay": "Cuenca",
         "Bolívar": "Guaranda",
@@ -201,6 +204,7 @@ def iniciar_minijuego():
                 continue
 
         if jugar_de_nuevo:
+            console.clear()
             continue
         else:
             print("\nGracias por jugar c:")

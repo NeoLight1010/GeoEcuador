@@ -33,6 +33,8 @@ def mostrar_menu_principal(provincias):
 
 
 def menu_informacion(provincias):
+    console.clear()
+    
     nombres_provincias = list(provincias.keys())
 
     console.print("[bold red]Ingresar el número de la provincia: \n")
