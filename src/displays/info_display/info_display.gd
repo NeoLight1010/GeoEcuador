@@ -3,10 +3,10 @@ extends Panel
 onready var province_name = get_node("/root/Main").params["InfoDisplay"]["province_name"]
 onready var data = get_node("/root/Main").params["InfoDisplay"]["data"]
 
-onready var Title = $MarginContainer/ScrollContainer/VBoxContainer/Title
-onready var Capital = $MarginContainer/ScrollContainer/VBoxContainer/Capital
-onready var Description = $MarginContainer/ScrollContainer/VBoxContainer/Description
-onready var ImageNode = $MarginContainer/ScrollContainer/VBoxContainer/Image
+onready var Title = $MainVBox/Header/Center/Title
+onready var Capital = $MainVBox/Body/DataVBox/Capital
+onready var Description = $MainVBox/Body/DataVBox/Description
+onready var ImageNode = $MainVBox/Body/DataVBox/Image
 
 func _ready():
 	Title.text = province_name
