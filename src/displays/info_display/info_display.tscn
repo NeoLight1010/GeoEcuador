@@ -1,105 +1,127 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/fonts/joystix/joystix.tres" type="DynamicFont" id=1]
 [ext_resource path="res://displays/info_display/info_display.gd" type="Script" id=2]
+[ext_resource path="res://assets/display/close_icon.png" type="Texture" id=3]
 
 [node name="InfoDisplay" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainVBox" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 505.0
-margin_bottom = 281.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_constants/separation = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Header" type="HBoxContainer" parent="MainVBox"]
-margin_right = 498.0
-margin_bottom = 12.0
+margin_right = 512.0
+margin_bottom = 22.0
 
 [node name="Left" type="MarginContainer" parent="MainVBox/Header"]
-margin_right = 163.0
-margin_bottom = 12.0
+margin_right = 168.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Center" type="MarginContainer" parent="MainVBox/Header"]
-margin_left = 167.0
-margin_right = 330.0
-margin_bottom = 12.0
+margin_left = 172.0
+margin_right = 340.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 
 [node name="Title" type="Label" parent="MainVBox/Header/Center"]
-margin_right = 163.0
-margin_bottom = 12.0
+margin_top = 5.0
+margin_right = 168.0
+margin_bottom = 17.0
 custom_fonts/font = ExtResource( 1 )
 text = "[province.name]"
 align = 1
 valign = 1
 
 [node name="Right" type="MarginContainer" parent="MainVBox/Header"]
-margin_left = 334.0
-margin_right = 498.0
-margin_bottom = 12.0
+margin_left = 344.0
+margin_right = 512.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 
-[node name="Body" type="ScrollContainer" parent="MainVBox"]
-margin_top = 16.0
-margin_right = 498.0
-margin_bottom = 274.0
+[node name="CloseButton" type="Button" parent="MainVBox/Header/Right"]
+margin_left = 140.0
+margin_right = 168.0
+margin_bottom = 22.0
+focus_mode = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+enabled_focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+
+[node name="Body" type="MarginContainer" parent="MainVBox"]
+margin_top = 26.0
+margin_right = 512.0
+margin_bottom = 288.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="Scroll" type="ScrollContainer" parent="MainVBox/Body"]
+margin_left = 8.0
+margin_right = 504.0
+margin_bottom = 254.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="DataVBox" type="VBoxContainer" parent="MainVBox/Body"]
-margin_right = 486.0
+[node name="DataVBox" type="VBoxContainer" parent="MainVBox/Body/Scroll"]
+margin_right = 484.0
 margin_bottom = 629.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Separator" type="MarginContainer" parent="MainVBox/Body/DataVBox"]
-margin_right = 486.0
+[node name="Separator" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
+margin_right = 484.0
 
-[node name="Image" type="TextureRect" parent="MainVBox/Body/DataVBox"]
+[node name="Image" type="TextureRect" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 4.0
-margin_right = 486.0
+margin_right = 484.0
 margin_bottom = 4.0
 stretch_mode = 6
 
-[node name="Separator3" type="MarginContainer" parent="MainVBox/Body/DataVBox"]
+[node name="Separator3" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 8.0
-margin_right = 486.0
+margin_right = 484.0
 margin_bottom = 8.0
 
-[node name="Capital" type="Label" parent="MainVBox/Body/DataVBox"]
+[node name="Capital" type="Label" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 12.0
-margin_right = 486.0
+margin_right = 484.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 1 )
 text = "Capital: [province.capital]"
-percent_visible = -0.0384615
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Separator2" type="MarginContainer" parent="MainVBox/Body/DataVBox"]
+[node name="Separator2" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 28.0
-margin_right = 486.0
+margin_right = 484.0
 margin_bottom = 28.0
 
-[node name="Description" type="Label" parent="MainVBox/Body/DataVBox"]
+[node name="Description" type="Label" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 32.0
-margin_right = 486.0
+margin_right = 484.0
 margin_bottom = 629.0
 custom_fonts/font = ExtResource( 1 )
 text = "Descripción: [province.description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -108,3 +130,4 @@ Ut non pharetra sapien. Praesent mollis, augue non feugiat malesuada, justo metu
 
 Nullam malesuada mi at sodales bibendum. Vivamus fermentum lacinia ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam tincidunt nunc eget convallis dignissim. Integer quis dui felis. Mauris tempor nibh nec tellus semper dignissim. Phasellus posuere magna eget sem fermentum scelerisque. Donec dapibus et risus a feugiat. Nunc et sem ante. Nunc vel sem lorem. Aliquam condimentum arcu at est faucibus faucibus. In rutrum sed ipsum et vestibulum. Nam cursus eleifend pharetra. )"
 autowrap = true
+[connection signal="pressed" from="MainVBox/Header/Right/CloseButton" to="." method="_on_Button_pressed"]
