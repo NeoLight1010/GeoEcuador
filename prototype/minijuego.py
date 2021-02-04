@@ -147,11 +147,12 @@ def iniciar_minijuego():
     set_capitales = SetPreguntas("Capitales", nucleos_capitales, lambda provincia: f"¿Cuál es la capital de {provincia}?")
     set_regiones = SetPreguntas("Regiones", nucleos_regiones, lambda provincia: f"¿En qué región se encuentra la provincia de {provincia}?")
     set_puntos_interes = SetPreguntas("Puntos de Interés", nucleos_puntos_interes,
-        lambda provincia: f"¿Cuál de los siguientes es un punto de interés o un evento representativo de la provincia de {provincia}")
+        lambda provincia: f"¿Cuál de los siguientes es un punto de interés o un evento representativo de la provincia de {provincia}?")
 
     lista_sets = [set_capitales, set_regiones, set_puntos_interes]
+    n_preguntas = 3
 
-    while True:
+    for n in range(n_preguntas):
         # Elegir un set aleatorio
         random_set = random.choice(lista_sets)
         random_nucleo = random_set.obtener_nucleo_aleatorio()
@@ -160,23 +161,22 @@ def iniciar_minijuego():
         respuesta_correcta = random_set.obtener_respuesta(random_nucleo)
         opciones = random_set.obtener_respuestas_aleatorias(respuesta_correcta)
 
-        print(random_question, "\n")
+        console.print(f"[bold red]{random_question}\n", justify="center")
 
         # Imprimir opciones
         for i, opcion in enumerate(opciones):
-            print(f"{i+1}. {opcion}")
+            console.print(f"[bold green]{i+1}.[/] {opcion}")
 
         # Pedir input
         while True:
             try:
-                eleccion = int(input(f"\n: "))
+                eleccion = int(input(f": "))
                 eleccion = eleccion - 1
+                respuesta_elegida = opciones[eleccion]
                 break
             except:
                 print("Input inválido.")
                 continue
-
-        respuesta_elegida = opciones[eleccion]
 
         # Revisar respuesta elegida
         if respuesta_elegida == respuesta_correcta:
@@ -184,31 +184,7 @@ def iniciar_minijuego():
         else:
             print(f"Lo siento, es incorrecto :( La respuesta correcta es {respuesta_correcta}")
 
-        # Preguntar si quiere jugar de nuevo
-        jugar_de_nuevo = ""
-        while True:
-            try:
-                jugar_de_nuevo = input("\n¿Seguir jugando? (s/n): ").lower()
-
-                if jugar_de_nuevo == "s":
-                    print("\n")
-                    jugar_de_nuevo = True
-                elif jugar_de_nuevo == 'n':
-                    jugar_de_nuevo = False
-                else:
-                    raise Exception
-
-                break
-            except Exception as e:
-                print("Input inválido. Intente de nuevo.")
-                continue
-
-        if jugar_de_nuevo:
-            console.clear()
-            continue
-        else:
-            print("\nGracias por jugar c:")
-            break
+    print("\nFin del juego. Gracias por jugar c:")
 
 
 # For testing

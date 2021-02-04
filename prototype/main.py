@@ -16,7 +16,7 @@ def mostrar_menu_principal(provincias):
     }
 
     for i, opcion in enumerate(opciones.keys()):
-        console.print(f"[green]{i+1}.[/] {opcion}")
+        console.print(f"[bold green]{i+1}.[/] {opcion}")
 
     # Input
     try:
