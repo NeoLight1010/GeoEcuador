@@ -4,7 +4,8 @@
 
 # Minijuego de la aplicación GeoEcuador: comprueba tu conocimiento.
 import random
-from console import console
+from utils.console import console
+
 
 class SetPreguntas:
     """Clase que representa un conjunto de preguntas que son consideradas del mismo tipo/categoría."""

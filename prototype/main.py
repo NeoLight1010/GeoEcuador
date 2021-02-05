@@ -1,7 +1,6 @@
 #TODO: Create class to reuse menus.
-
-import Provincia
-from console import console
+from loaders.provincia import cargar_provincias
+from utils.console import console
 from minijuego import iniciar_minijuego
 
 
@@ -21,13 +20,12 @@ def mostrar_menu_principal(provincias):
     # Input
     try:
         eleccion = int(console.input(": "))
-        eleccion = eleccion -1
+        eleccion = eleccion - 1
         eleccion = list(opciones.keys())[eleccion]
         if eleccion == "Información":
             opciones[eleccion](provincias)
         else:
             opciones[eleccion]()
-        
     except:
         console.print("Error. Intente de nuevo.")
 
@@ -63,6 +61,6 @@ def menu_informacion(provincias):
 
 if __name__ == "__main__":
     console.clear()
-    provincias = Provincia.cargar_provincias()
+    provincias = cargar_provincias()
     
     mostrar_menu_principal(provincias)
