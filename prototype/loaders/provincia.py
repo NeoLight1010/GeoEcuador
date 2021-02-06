@@ -15,11 +15,12 @@ def cargar_provincias():
 
     json_provincias = None
 
-    with open(os.path.join(dirname, "data/provincias/provincias.json"), "r", encoding="utf-8") as json_file:
+    with open(os.path.join(dirname, "data/provincias/provincias.json"),
+              "r", encoding="utf-8") as json_file:
         json_provincias = json.load(json_file)
 
     provincias = {}
-    
+
     for provincia in json_provincias.keys():
         nombre = provincia
         region = json_provincias[nombre]["Región"]
@@ -38,9 +39,9 @@ def cargar_provincias():
             region = insular
         else:
             region = None
-        
 
-        nueva_provincia = Provincia(nombre, region, descripcion, ciudades, capital, puntos_interes)
+        nueva_provincia = Provincia(nombre, region, descripcion,
+                                    ciudades, capital, puntos_interes)
         provincias[nombre] = nueva_provincia
 
     return provincias
