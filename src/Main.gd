@@ -23,4 +23,4 @@ func change_scene(scene, _params={}):
 		params[scene] = {}
 	
 	merge_dic(params[scene], _params) # Update params dicts.
-	get_tree().change_scene(scenes[scene])
+	return get_tree().change_scene(scenes[scene])

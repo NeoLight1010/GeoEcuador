@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://displays/trivia/start_display/background_layer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/chikarego2/chikarego2.tres" type="DynamicFont" id=2]
 [ext_resource path="res://animations/AnimBotonV.tres" type="Animation" id=3]
 [ext_resource path="res://animations/AnimBotonF.tres" type="Animation" id=4]
@@ -15,84 +14,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PreguntaNode" parent="." instance=ExtResource( 6 )]
+[node name="MiddleLayer" type="CanvasLayer" parent="."]
 
-[node name="BotonLayer" type="CanvasLayer" parent="."]
-
-[node name="BotonVerdadero" type="Button" parent="BotonLayer"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = 4.0
-margin_right = 160.0
-margin_bottom = 89.0
-custom_fonts/font = ExtResource( 2 )
-action_mode = 0
-keep_pressed_outside = true
-text = "Verdadero"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BotonFalso" type="Button" parent="BotonLayer"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 160.0
-margin_top = 4.0
-margin_right = 320.0
-margin_bottom = 89.0
-custom_fonts/font = ExtResource( 2 )
-text = "Falso"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Animator" type="AnimationPlayer" parent="BotonLayer"]
-anims/AnimBotonF = ExtResource( 4 )
-anims/AnimBotonV = ExtResource( 3 )
-
-[node name="RespuestaLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="RespuestaV" type="Label" parent="RespuestaLayer"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = -0.353546
-margin_top = -85.0
-margin_right = 159.646
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "test"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RespuestaF" type="Label" parent="RespuestaLayer"]
-margin_left = 160.0
-margin_top = 93.6465
-margin_right = 320.0
-margin_bottom = 178.646
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "test"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackgroundLayer" parent="." instance=ExtResource( 1 )]
-layer = -1
-
-[node name="PreguntaLayer" type="CanvasLayer" parent="."]
-
-[node name="textPregunta" type="Label" parent="PreguntaLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MiddleLayer"]
 anchor_right = 1.0
-margin_left = 20.0
-margin_top = 30.0
-margin_right = -20.0
-margin_bottom = 45.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separator" type="MarginContainer" parent="MiddleLayer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 142.0
+size_flags_vertical = 3
+
+[node name="Respuestas" type="HBoxContainer" parent="MiddleLayer/VBoxContainer"]
+margin_top = 146.0
+margin_right = 512.0
+margin_bottom = 288.0
+size_flags_vertical = 3
+
+[node name="RespuestaV" type="Label" parent="MiddleLayer/VBoxContainer/Respuestas"]
+margin_top = 63.0
+margin_right = 254.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "[correcto/incorrecto]"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RespuestaF" type="Label" parent="MiddleLayer/VBoxContainer/Respuestas"]
+margin_left = 258.0
+margin_top = 63.0
+margin_right = 512.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "[correcto/incorrecto]"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FrontLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="FrontLayer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.639216, 0.211765, 0.364706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="VBoxContainer" parent="FrontLayer/VBoxContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="textPregunta" type="Label" parent="FrontLayer/VBoxContainer/ColorRect/CenterContainer"]
+margin_top = 45.0
+margin_right = 512.0
+margin_bottom = 78.0
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Aqui va la pregunta 
@@ -104,32 +103,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PreguntaBgLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="ColorRect" type="ColorRect" parent="PreguntaBgLayer"]
-margin_right = 320.0
-margin_bottom = 94.0
-color = Color( 0.639216, 0.211765, 0.364706, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
-[node name="PuntajeLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="Puntaje" type="Label" parent="PuntajeLayer"]
-anchor_left = 0.5
-anchor_top = 0.428
-anchor_right = 0.5
-anchor_bottom = 0.428
-margin_left = -56.0
-margin_top = -16.04
-margin_right = 54.0
-margin_bottom = 0.959991
+[node name="Puntaje" type="Label" parent="FrontLayer/VBoxContainer/ColorRect/CenterContainer"]
+margin_top = 82.0
+margin_right = 512.0
+margin_bottom = 97.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Tu puntaje es: 0"
@@ -138,6 +115,44 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="BotonLayer/BotonVerdadero" to="." method="_on_BotonVerdadero_pressed"]
-[connection signal="pressed" from="BotonLayer/BotonFalso" to="." method="_on_BotonFalso_pressed"]
+
+[node name="Botones" type="HBoxContainer" parent="FrontLayer/VBoxContainer"]
+margin_top = 146.0
+margin_right = 512.0
+margin_bottom = 288.0
+size_flags_vertical = 3
+
+[node name="BotonVerdadero" type="Button" parent="FrontLayer/VBoxContainer/Botones"]
+margin_right = 254.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+action_mode = 0
+keep_pressed_outside = true
+text = "Verdadero"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonFalso" type="Button" parent="FrontLayer/VBoxContainer/Botones"]
+margin_left = 258.0
+margin_right = 512.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Falso"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonAnimator" type="AnimationPlayer" parent="FrontLayer/VBoxContainer/Botones"]
+anims/AnimBotonF = ExtResource( 4 )
+anims/AnimBotonV = ExtResource( 3 )
+
+[node name="PreguntaNode" parent="." instance=ExtResource( 6 )]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="pressed" from="FrontLayer/VBoxContainer/Botones/BotonVerdadero" to="." method="_on_BotonVerdadero_pressed"]
+[connection signal="pressed" from="FrontLayer/VBoxContainer/Botones/BotonFalso" to="." method="_on_BotonFalso_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

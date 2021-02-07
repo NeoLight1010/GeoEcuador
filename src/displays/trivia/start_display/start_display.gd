@@ -1,12 +1,12 @@
 extends Control
 
-onready var text_pregunta  = $PreguntaLayer/textPregunta
-onready var RespuestaV     = $RespuestaLayer/RespuestaV 
-onready var RespuestaF     = $RespuestaLayer/RespuestaF
-onready var Animator       = $BotonLayer/Animator
+onready var text_pregunta  = $FrontLayer/VBoxContainer/ColorRect/CenterContainer/textPregunta
+onready var RespuestaV     = $MiddleLayer/VBoxContainer/Respuestas/RespuestaV
+onready var RespuestaF     = $MiddleLayer/VBoxContainer/Respuestas/RespuestaF
+onready var Animator       = $FrontLayer/VBoxContainer/Botones/BotonAnimator
 onready var Timer          = $Timer
 onready var PreguntaHolder = $PreguntaNode
-onready var text_puntaje   = $PuntajeLayer/Puntaje
+onready var text_puntaje   = $FrontLayer/VBoxContainer/ColorRect/CenterContainer/Puntaje
 
 var puntaje = 0
 var respuesta = null
@@ -29,7 +29,6 @@ func set_Pregunta():
 	else:
 		var root = get_node("/root/Main")
 		root.change_scene("TriviaGameOverDisplay")
-		print("Cambiando a final")
 
 	if whichPregunta != null:
 		PreguntaHolder.remove_child(whichPregunta)
@@ -50,7 +49,9 @@ func _on_BotonVerdadero_pressed():
 	else:
 		RespuestaV.set_text("Correcto")
 		puntaje += 1
+		
 	Animator.play("AnimBotonV")
+
 	Timer.start()
 	text_puntaje.set_text("Tu puntaje es: " + str(puntaje))
 
