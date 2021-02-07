@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+next_pass = SubResource( 1 )
+
+[node name="BackgroundLayer" type="CanvasLayer"]
+
+[node name="ColorPanel" type="Panel" parent="."]
+modulate = Color( 0.372549, 0.196078, 0.545098, 1 )
+self_modulate = Color( 0.372549, 0.196078, 0.545098, 1 )
+material = SubResource( 2 )
+margin_right = 320.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/chikarego2/chikarego2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://displays/trivia/menu_display/menu_display.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/joystix/joystix.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ecuador_map/ecuador_map.png" type="Texture" id=4]
+
+[node name="MenuMinijuego" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -10.0 ]
+}
+
+[node name="Background" type="Control" parent="."]
+margin_right = 512.0
+margin_bottom = 288.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.823529, 0.360784, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EcuadorMap" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 512.0
+margin_bottom = 288.0
+alignment = 1
+
+[node name="Titulo" type="Label" parent="VBoxContainer"]
+margin_top = 119.0
+margin_right = 512.0
+margin_bottom = 131.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Minijuego"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 135.0
+margin_right = 512.0
+margin_bottom = 169.0
+
+[node name="HBoxInicar" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 15.0
+alignment = 1
+
+[node name="Selector" type="Label" parent="VBoxContainer/VBoxContainer/HBoxInicar"]
+margin_left = 228.0
+margin_right = 237.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 9, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Iniciar" type="Label" parent="VBoxContainer/VBoxContainer/HBoxInicar"]
+margin_left = 241.0
+margin_right = 283.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Iniciar"
+
+[node name="HBoxSalir" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 512.0
+margin_bottom = 34.0
+alignment = 1
+
+[node name="Selector" type="Label" parent="VBoxContainer/VBoxContainer/HBoxSalir"]
+margin_left = 228.0
+margin_right = 237.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 9, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Salir" type="Label" parent="VBoxContainer/VBoxContainer/HBoxSalir"]
+margin_left = 241.0
+margin_right = 283.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 42, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Salir"

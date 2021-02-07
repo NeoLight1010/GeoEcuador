@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://displays/trivia/start_display/pregunta/Pregunta.gd" type="Script" id=1]
+
+
+[node name="PreguntaHolder" type="Node"]
+
+[node name="Pregunta" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "La capital de Pichincha es Quito"
+respuesta = true
+
+[node name="Pregunta2" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "Morona Santiago está en la región costa "
+
+[node name="Pregunta3" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "La Playa de Los Frailes está en Esmeraldas"
+
+[node name="Pregunta4" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = " La capital de Carchi es Ibarra"
+
+[node name="Pregunta5" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "Santa Elena está en la región insular"
+
+[node name="Pregunta6" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "El Parque Nacional El Cajas está en Azuay"
+respuesta = true
+
+[node name="Pregunta7" type="Node" parent="."]
+script = ExtResource( 1 )
+dato = "Guaranda está en la región sierra"
+respuesta = true

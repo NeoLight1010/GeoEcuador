@@ -3,11 +3,14 @@ extends Node2D
 var params = {}
 var scenes = {
 	'InfoDisplay': 'res://displays/info_display/info_display.tscn',
-	'MapDisplay': 'res://displays/map_display/map_display.tscn'
+	'MapDisplay': 'res://displays/map_display/map_display.tscn',
+	'TriviaMenuDisplay': 'res://displays/trivia/menu_display/menu_display.tscn',
+	'TriviaStartDisplay': 'res://displays/trivia/start_display/start_display.tscn',
+	'TriviaGameOverDisplay': 'res://displays/trivia/game_over_display/game_over_display.tscn'
 }
 
 func _ready():
-	change_scene('MapDisplay')
+	change_scene('TriviaMenuDisplay')
 
 
 static func merge_dic(target, patch):
