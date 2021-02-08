@@ -91,22 +91,38 @@ def iniciar_minijuego():
     }
 
     # Inicializar sets de preguntas.
-    set_capitales = SetPreguntas("Capitales", nucleos_capitales, lambda provincia: f"¿Cuál es la capital de {provincia}?")
-    set_regiones = SetPreguntas("Regiones", nucleos_regiones, lambda provincia: f"¿En qué región se encuentra la provincia de {provincia}?")
+    set_capitales = SetPreguntas("Capitales", nucleos_capitales,
+                                 lambda provincia:
+                                 f"¿Cuál es la capital de {provincia}?",
+                                 lambda provincia, capital:
+                                 f"La capital de {provincia} es {capital}.")
+    set_regiones = SetPreguntas("Regiones", nucleos_regiones,
+                                lambda provincia:
+                                f"¿En qué región se encuentra la provincia de {provincia}?",
+                                lambda provincia, region:
+                                f"{provincia} se encuentra en la región {region}.")
     set_puntos_interes = SetPreguntas("Puntos de Interés", nucleos_puntos_interes,
-        lambda provincia: f"¿Cuál de los siguientes es un punto de interés o un evento representativo de la provincia de {provincia}?")
+        lambda provincia:
+        f"¿Cuál de los siguientes es un punto de interés o un evento representativo de la provincia de {provincia}?",
+        lambda provincia, punto:
+        f"{punto} es un punto de interés o evento representativo de {provincia}")
 
     lista_sets = [set_capitales, set_regiones, set_puntos_interes]
     n_preguntas = 3
 
     for n in range(n_preguntas):
+        tipo = SetPreguntas.VF
         # Elegir un set aleatorio
         random_set = random.choice(lista_sets)
         random_nucleo = random_set.obtener_nucleo_aleatorio()
-        random_question = random_set.obtener_pregunta(random_nucleo)
-
-        respuesta_correcta = random_set.obtener_respuesta(random_nucleo)
-        opciones = random_set.obtener_respuestas_aleatorias(respuesta_correcta)
+        random_pregunta_nucleo_sec = random_set.obtener_pregunta(random_nucleo,
+                                                                 tipo=tipo)
+        random_question = random_pregunta_nucleo_sec[0]
+        random_nucleo_2 = random_pregunta_nucleo_sec[1]
+        respuesta_correcta = random_set.obtener_respuesta(random_nucleo, random_nucleo_2,
+                                                          tipo=tipo)
+        opciones = random_set.obtener_opciones(respuesta_correcta,
+                                               tipo=tipo)
 
         console.print(f"[bold red]{random_question}\n", justify="center")
 
@@ -129,7 +145,9 @@ def iniciar_minijuego():
         if respuesta_elegida == respuesta_correcta:
             print("\n¡Muy bien! ¡Respuesta correcta!")
         else:
-            print(f"Lo siento, es incorrecto :( La respuesta correcta es {respuesta_correcta}")
+            print(
+                f"Lo siento, es incorrecto :( La respuesta correcta es {respuesta_correcta}"
+            )
 
     print("\nFin del juego. Gracias por jugar c:")
 
