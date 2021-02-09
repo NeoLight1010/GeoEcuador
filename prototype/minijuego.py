@@ -119,7 +119,8 @@ def iniciar_minijuego():
                                                                  tipo=tipo)
         random_question = random_pregunta_nucleo_sec[0]
         random_nucleo_2 = random_pregunta_nucleo_sec[1]
-        respuesta_correcta = random_set.obtener_respuesta(random_nucleo, random_nucleo_2,
+        respuesta_correcta = random_set.obtener_respuesta(random_nucleo,
+                                                          random_nucleo_2,
                                                           tipo=tipo)
         opciones = random_set.obtener_opciones(respuesta_correcta,
                                                tipo=tipo)
