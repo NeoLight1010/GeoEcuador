@@ -133,7 +133,7 @@ def iniciar_minijuego():
         # Pedir input
         while True:
             try:
-                eleccion = int(input(": "))
+                eleccion = int(input("(1/2): "))
                 eleccion = eleccion - 1
                 respuesta_elegida = opciones[eleccion]
                 break
