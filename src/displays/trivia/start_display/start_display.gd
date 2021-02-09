@@ -7,6 +7,8 @@ onready var Animator       = $FrontLayer/VBoxContainer/Botones/BotonAnimator
 onready var Timer          = $Timer
 onready var PreguntaHolder = $PreguntaNode
 onready var text_puntaje   = $FrontLayer/VBoxContainer/ColorRect/CenterContainer/Puntaje
+onready var boton_falso = $FrontLayer/VBoxContainer/Botones/BotonFalso
+onready var boton_verdadero = $FrontLayer/VBoxContainer/Botones/BotonVerdadero
 
 var puntaje = 0
 var respuesta = null
@@ -28,19 +30,24 @@ func set_Pregunta():
 		
 	else:
 		var root = get_node("/root/Main")
-		root.change_scene("TriviaGameOverDisplay")
+		root.change_scene("TriviaGameOverDisplay", {
+			"score": puntaje
+		})
 
 	if whichPregunta != null:
 		PreguntaHolder.remove_child(whichPregunta)
 	
-func _on_BotonFalso_pressed():
+func _on_BotonFalso_pressed():	
 	if respuesta == true:
 		RespuestaF.set_text("Incorrecto")
 	else:
 		RespuestaF.set_text("Correcto")
 		puntaje += 1
+		
 	Animator.play("AnimBotonF")
 	Timer.start()
+	boton_falso.disabled = true
+	
 	text_puntaje.set_text("Tu puntaje es: " + str(puntaje))
 
 func _on_BotonVerdadero_pressed():
@@ -51,10 +58,14 @@ func _on_BotonVerdadero_pressed():
 		puntaje += 1
 		
 	Animator.play("AnimBotonV")
-
 	Timer.start()
+	boton_verdadero.disabled = true
+	
 	text_puntaje.set_text("Tu puntaje es: " + str(puntaje))
 
 func _on_Timer_timeout():
+	boton_verdadero.disabled = false
+	boton_falso.disabled = false
+	
 	Animator.play_backwards(Animator.get_current_animation())
 	set_Pregunta()

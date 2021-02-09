@@ -33,3 +33,10 @@ func _on_Provincia_click(province):
 		
 	focused_province = province
 	$InfoLabel.text = province.province_name
+
+
+func _on_ReturnToMenuArea_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT \
+			&& event.pressed:
+		
+		$"/root/Main".change_scene("MainMenuDisplay")

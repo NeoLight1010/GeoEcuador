@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/joystix/joystix.tres" type="DynamicFont" id=1]
 [ext_resource path="res://displays/info_display/info_display.gd" type="Script" id=2]
 [ext_resource path="res://assets/display/close_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/provincias/azuay.png" type="Texture" id=4]
 
 [node name="InfoDisplay" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainVBox" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -20,6 +24,9 @@ __meta__ = {
 [node name="Header" type="HBoxContainer" parent="MainVBox"]
 margin_right = 512.0
 margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Left" type="MarginContainer" parent="MainVBox/Header"]
 margin_right = 168.0
@@ -81,7 +88,7 @@ scroll_horizontal_enabled = false
 
 [node name="DataVBox" type="VBoxContainer" parent="MainVBox/Body/Scroll"]
 margin_right = 484.0
-margin_bottom = 629.0
+margin_bottom = 671.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,18 +100,19 @@ margin_right = 484.0
 [node name="Image" type="TextureRect" parent="MainVBox/Body/Scroll/DataVBox"]
 margin_top = 4.0
 margin_right = 484.0
-margin_bottom = 4.0
+margin_bottom = 26.0
+texture = ExtResource( 4 )
 stretch_mode = 6
 
 [node name="Separator3" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
-margin_top = 8.0
+margin_top = 30.0
 margin_right = 484.0
-margin_bottom = 8.0
+margin_bottom = 30.0
 
 [node name="Capital" type="Label" parent="MainVBox/Body/Scroll/DataVBox"]
-margin_top = 12.0
+margin_top = 34.0
 margin_right = 484.0
-margin_bottom = 24.0
+margin_bottom = 46.0
 custom_fonts/font = ExtResource( 1 )
 text = "Capital: [province.capital]"
 __meta__ = {
@@ -112,14 +120,27 @@ __meta__ = {
 }
 
 [node name="Separator2" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
-margin_top = 28.0
+margin_top = 50.0
 margin_right = 484.0
-margin_bottom = 28.0
+margin_bottom = 50.0
+
+[node name="Venues" type="Label" parent="MainVBox/Body/Scroll/DataVBox"]
+margin_top = 54.0
+margin_right = 484.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 1 )
+text = "Puntos/eventos de interés: [Puntos interés]"
+autowrap = true
+
+[node name="Separator4" type="MarginContainer" parent="MainVBox/Body/Scroll/DataVBox"]
+margin_top = 70.0
+margin_right = 484.0
+margin_bottom = 70.0
 
 [node name="Description" type="Label" parent="MainVBox/Body/Scroll/DataVBox"]
-margin_top = 32.0
+margin_top = 74.0
 margin_right = 484.0
-margin_bottom = 629.0
+margin_bottom = 671.0
 custom_fonts/font = ExtResource( 1 )
 text = "Descripción: [province.description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex a rhoncus convallis. Integer in turpis dui. Praesent tristique iaculis elementum. Pellentesque magna massa, rhoncus in odio sed, blandit ornare mi. In iaculis nibh risus, ac eleifend orci tempus ac. Sed elementum, ipsum eu malesuada faucibus, massa elit mollis leo, sit amet rhoncus dui ligula ut augue. Duis metus orci, fringilla eu neque vitae, mattis consequat ipsum. Proin mollis metus sed orci dignissim, sed vehicula enim placerat. Vestibulum venenatis eros augue, quis aliquam erat vestibulum laoreet. Sed varius dolor et pretium facilisis. Fusce vel felis tellus. Curabitur quis massa accumsan, convallis tortor vel, dapibus erat. Curabitur nec mollis elit. Pellentesque tempor purus vel condimentum rhoncus. Ut nec commodo massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 

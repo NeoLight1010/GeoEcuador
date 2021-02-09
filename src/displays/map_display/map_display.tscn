@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://provincia/polygons/costa/esmeraldas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://provincia/polygons/costa/santa_elena.tscn" type="PackedScene" id=2]
@@ -29,6 +29,10 @@
 [ext_resource path="res://assets/fonts/joystix/joystix.tres" type="DynamicFont" id=27]
 [ext_resource path="res://assets/ecuador_map/ecuador_map.png" type="Texture" id=28]
 [ext_resource path="res://displays/map_display/map_display.gd" type="Script" id=29]
+[ext_resource path="res://assets/display/close_icon.png" type="Texture" id=30]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.809
 
 [node name="Ecuador" type="Node2D"]
 script = ExtResource( 29 )
@@ -176,3 +180,13 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ReturnToMenu" type="Sprite" parent="."]
+position = Vector2( 498, 12 )
+texture = ExtResource( 30 )
+
+[node name="ReturnToMenuArea" type="Area2D" parent="ReturnToMenu"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ReturnToMenu/ReturnToMenuArea"]
+shape = SubResource( 1 )
+[connection signal="input_event" from="ReturnToMenu/ReturnToMenuArea" to="." method="_on_ReturnToMenuArea_input_event"]

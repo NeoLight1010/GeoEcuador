@@ -24,7 +24,8 @@ func handle_selection(_current_selection):
 		var root = get_node("/root/Main")
 		root.change_scene("TriviaStartDisplay")
 	elif _current_selection == 1:
-		get_tree().quit() #cambiar para que regrese a menu principal
+		var root = get_node("/root/Main")
+		root.change_scene("MainMenuDisplay")
 
 func set_current_selection(_current_selection):
 	selector_uno.text = ""

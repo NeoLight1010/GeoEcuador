@@ -4,7 +4,6 @@
 [ext_resource path="res://displays/trivia/game_over_display/game_over_display.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/chikarego2/chikarego2.tres" type="DynamicFont" id=3]
 
-
 [node name="FinControl" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,60 +17,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-margin_right = 320.0
-margin_bottom = 180.0
+margin_right = 512.0
+margin_bottom = 288.0
 color = Color( 0.27451, 0.176471, 0.419608, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-margin_right = 320.0
-margin_bottom = 180.0
+margin_right = 512.0
+margin_bottom = 288.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 49.0
-margin_top = 68.0
-margin_right = 270.0
-margin_bottom = 111.0
+margin_left = 160.0
+margin_top = 120.0
+margin_right = 352.0
+margin_bottom = 167.0
+alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_right = 221.0
-margin_bottom = 24.0
-
-[node name="FinJuego" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 221.0
-margin_bottom = 24.0
+[node name="FinJuego" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 192.0
+margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Fin del juego"
+align = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-margin_top = 28.0
-margin_right = 221.0
-margin_bottom = 43.0
+[node name="PuntajeFinal" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Puntaje final: [puntaje]"
+align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 89.0
-margin_right = 132.0
-margin_bottom = 15.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 192.0
+margin_bottom = 47.0
+alignment = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 43.0
-margin_bottom = 15.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
-margin_right = 43.0
-margin_bottom = 15.0
-
-[node name="Selector" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
-margin_right = 9.0
+[node name="Selector" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 74.0
+margin_right = 83.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 9, 0 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
-[node name="Salir" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
-margin_left = 13.0
-margin_right = 43.0
+[node name="Salir" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 87.0
+margin_right = 117.0
 margin_bottom = 15.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
