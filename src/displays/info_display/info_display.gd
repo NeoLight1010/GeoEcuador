@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 onready var province_name = get_node("/root/Main").params["InfoDisplay"]["province_name"]
 onready var data = get_node("/root/Main").params["InfoDisplay"]["data"]

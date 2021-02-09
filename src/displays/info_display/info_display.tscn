@@ -4,13 +4,10 @@
 [ext_resource path="res://displays/info_display/info_display.gd" type="Script" id=2]
 [ext_resource path="res://assets/display/close_icon.png" type="Texture" id=3]
 
-[node name="InfoDisplay" type="Panel"]
+[node name="InfoDisplay" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MainVBox" type="VBoxContainer" parent="."]
 anchor_right = 1.0
