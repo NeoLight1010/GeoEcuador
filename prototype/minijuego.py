@@ -111,7 +111,7 @@ def iniciar_minijuego():
     n_preguntas = 3
 
     for n in range(n_preguntas):
-        tipo = SetPreguntas.VF
+        tipo = SetPreguntas.tipo.VF
         # Elegir un set aleatorio
         random_set = random.choice(lista_sets)
         random_nucleo = random_set.obtener_nucleo_aleatorio()
@@ -146,7 +146,7 @@ def iniciar_minijuego():
             print("\n¡Muy bien! ¡Respuesta correcta!")
         else:
             print(
-                f"Lo siento, es incorrecto :( La respuesta correcta es {respuesta_correcta}"
+                f"Lo siento, es incorrecto. :( La respuesta correcta es {respuesta_correcta}"
             )
 
     print("\nFin del juego. Gracias por jugar c:")

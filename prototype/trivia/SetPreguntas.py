@@ -5,8 +5,13 @@ class SetPreguntas:
     """Clase que representa un conjunto de preguntas que
     son consideradas del mismo tipo/categoría."""
 
-    NORMAL = "NORMAL"
-    VF = "V/F"
+    class tipo:
+        NORMAL = "tipo.NORMAL"
+        VF = "V/F"
+
+    class VF:
+        V = "Verdadero"
+        F = "Falso"
 
     def __init__(self, nombre, nucleos,
                  formato_normal=lambda: "", formato_vf=lambda: ""):
@@ -31,10 +36,10 @@ class SetPreguntas:
         self.formato_normal = formato_normal
         self.formato_vf = formato_vf
 
-    def obtener_pregunta(self, nucleo, tipo=NORMAL):
-        if tipo == self.NORMAL:
+    def obtener_pregunta(self, nucleo, tipo=tipo.NORMAL):
+        if tipo == self.tipo.NORMAL:
             return self.formato_normal(nucleo)
-        elif tipo == self.VF:
+        elif tipo == self.tipo.VF:
             respuesta_correcta = self.obtener_respuesta(nucleo)
 
             rand_opciones = self.obtener_opciones(
@@ -45,24 +50,24 @@ class SetPreguntas:
             return (self.formato_vf(nucleo, rand_respuesta),
                     rand_respuesta)
 
-    def obtener_respuesta(self, nucleo, nucleo_2="", tipo=NORMAL):
-        if tipo == self.NORMAL:
+    def obtener_respuesta(self, nucleo, nucleo_2="", tipo=tipo.NORMAL):
+        if tipo == self.tipo.NORMAL:
             return self.nucleos[nucleo]
-        elif tipo == self.VF:
+        elif tipo == self.tipo.VF:
             if self.nucleos[nucleo] == nucleo_2:
-                return "V"
+                return self.VF.V
             else:
-                return "F"
+                return self.VF.F
 
     def obtener_nucleo_aleatorio(self):
         nucleos_pregunta = list(self.nucleos.keys())
         nucleo_aleatorio = random.choice(nucleos_pregunta)
         return nucleo_aleatorio
 
-    def obtener_opciones(self, respuesta_correcta="", tipo=NORMAL, n=4):
+    def obtener_opciones(self, respuesta_correcta="", tipo=tipo.NORMAL, n=4):
         """Devuelve una lista de opciones aleatorias.
         respuesta_correcta será siempre añadida si es provista."""
-        if tipo == self.NORMAL:
+        if tipo == self.tipo.NORMAL:
             nucleos_pregunta = list(self.nucleos.keys())
 
             options = []
@@ -84,5 +89,5 @@ class SetPreguntas:
 
             random.shuffle(options)
             return options
-        elif tipo == self.VF:
-            return ['V', 'F']
+        elif tipo == self.tipo.VF:
+            return [self.VF.V, self.VF.F]
